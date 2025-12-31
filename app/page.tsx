@@ -312,7 +312,7 @@ export default function Home() {
                 Search properties in your Community
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                CribEasy isn't just about finding a place to live—it's about becoming part of a vibrant community. 
+                CribEasy isn&apos;t just about finding a place to live—it&apos;s about becoming part of a vibrant community. 
                 Connect with neighbors, discover local events, and build lasting relationships in your new neighborhood.
               </p>
               <div className="space-y-6">
@@ -340,7 +340,7 @@ export default function Home() {
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Discover Local Events</h3>
                     <p className="text-gray-600">
                       Stay updated on neighborhood gatherings, community events, and local activities. From block 
-                      parties to farmers markets, never miss out on what's happening in your area.
+                      parties to farmers markets, never miss out on what&apos;s happening in your area.
                     </p>
                   </div>
                 </div>
@@ -476,7 +476,7 @@ export default function Home() {
                   <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  "For Rent by Neighbor" option
+                  &quot;For Rent by Neighbor&quot; option
                 </li>
               </ul>
             </div>
