@@ -7,8 +7,76 @@ import { FaUserPlus, FaSearch, FaHandshake } from "react-icons/fa";
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  // Schema.org structured data
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "CribEasy",
+    "description": "Community-driven real estate platform connecting renters, agents, and residents through verified listings and neighborhood insights",
+    "url": process.env.NEXT_PUBLIC_SITE_URL || "https://cribeasy.com",
+    "logo": `${process.env.NEXT_PUBLIC_SITE_URL || "https://cribeasy.com"}/images/cribeasy-logo.jpg`,
+    "sameAs": [
+      "https://twitter.com/cribeasy",
+      "https://facebook.com/cribeasy",
+      "https://linkedin.com/company/cribeasy"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Service",
+      "email": "support@cribeasy.com"
+    }
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "CribEasy",
+    "url": process.env.NEXT_PUBLIC_SITE_URL || "https://cribeasy.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": `${process.env.NEXT_PUBLIC_SITE_URL || "https://cribeasy.com"}/search?q={search_term_string}`
+      },
+      "query-input": "required name=search_term_string"
+    }
+  };
+
+  const softwareApplicationSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "CribEasy",
+    "applicationCategory": "RealEstateApplication",
+    "operatingSystem": "iOS, Android",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "1250"
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <>
+      {/* Schema.org Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
+      />
+      
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       {/* Navigation */}
       <nav className="bg-white shadow-sm sticky top-0 z-50">
         <div className="container mx-auto px-6 py-4">
@@ -25,28 +93,25 @@ export default function Home() {
             />
             </div>
 
-            {/* Desktop Navigation - Centered */}
-            <div className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
+            {/* Desktop Navigation - Centered (Large screens only) */}
+            <div className="hidden lg:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
               <a href="#about" className="text-gray-700 hover:text-gray-900 transition-colors">About</a>
-              <a href="#features" className="text-gray-700 hover:text-gray-900 transition-colors">Service</a>
-              <a href="#for-users" className="text-gray-700 hover:text-gray-900 transition-colors">Portfolio</a>
-              <a href="#" className="text-gray-700 hover:text-gray-900 transition-colors">Blog</a>
+              <a href="#how-it-works" className="text-gray-700 hover:text-gray-900 transition-colors">How It Works</a>
+              <a href="#features" className="text-gray-700 hover:text-gray-900 transition-colors">Features</a>
+              <a href="#for-users" className="text-gray-700 hover:text-gray-900 transition-colors">For Users</a>
               <a href="#contact" className="text-gray-700 hover:text-gray-900 transition-colors">Contact</a>
             </div>
 
-            {/* Desktop Buttons - Right */}
-            <div className="hidden md:flex items-center space-x-4 flex-shrink-0">
-              <button className="text-gray-700 hover:text-gray-900 transition-colors">
-                Download
-              </button>
+            {/* Desktop Buttons - Right (Large screens only) */}
+            <div className="hidden lg:flex items-center flex-shrink-0">
               <button className="text-white px-6 py-3 rounded-full transition-colors font-medium text-base" style={{ backgroundColor: '#00419c' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#003080'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#00419c'}>
                 Join CribEasy
               </button>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile/Tablet Menu Button */}
             <button
-              className="md:hidden p-2 text-gray-700 hover:text-gray-900"
+              className="lg:hidden p-2 text-gray-700 hover:text-gray-900"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -62,9 +127,9 @@ export default function Home() {
             </button>
           </div>
 
-          {/* Mobile Menu */}
+          {/* Mobile/Tablet Menu */}
           {mobileMenuOpen && (
-            <div className="md:hidden mt-4 pb-4 border-t border-gray-200">
+            <div className="lg:hidden mt-4 pb-4 border-t border-gray-200">
               <div className="flex flex-col space-y-4 pt-4">
                 <a
                   href="#about"
@@ -101,10 +166,7 @@ export default function Home() {
                 >
                   Contact
                 </a>
-                <div className="flex flex-col space-y-3 pt-2">
-                  <button className="text-gray-700 hover:text-gray-900 transition-colors text-left py-2">
-                    Download
-                  </button>
+                <div className="pt-2">
                   <button className="text-white px-6 py-4 rounded-full transition-colors font-medium text-base w-full" style={{ backgroundColor: '#00419c' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#003080'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#00419c'}>
                     Join CribEasy
                   </button>
@@ -377,6 +439,157 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Community Section - Duplicate with Swapped Columns */}
+      <section className="bg-white py-20">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Image */}
+            <div className="flex justify-center items-center order-2 md:order-1">
+              <div className="relative w-full max-w-md">
+                <Image
+                  src="/images/community-image.png"
+                  alt="Community Connection"
+                  width={400}
+                  height={400}
+                  className="w-full h-auto rounded-2xl object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Right Column - Content */}
+            <div className="order-1 md:order-2">
+              <h2 className="text-4xl font-bold mb-6" style={{ color: '#00419c' }}>
+                Are you a Lagos agent/landlord?
+              </h2>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                List your properties for free on CribEasy and reach thousands of verified renters in Lagos. 
+                Get verified, manage your listings, and connect directly with potential tenants—all at no cost.
+              </p>
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0" style={{ backgroundColor: '#F68A1E' }}>
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Free Property Listings</h3>
+                    <p className="text-gray-600">
+                      List unlimited properties on CribEasy at absolutely no cost. No hidden fees, no commission 
+                      charges—just free access to our platform to showcase your properties to verified renters.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0" style={{ backgroundColor: '#F68A1E' }}>
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Get Verified & Build Trust</h3>
+                    <p className="text-gray-600">
+                      Complete our quick verification process to get a verified badge. Verified agents and landlords 
+                      receive more inquiries and build trust with potential tenants faster.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0" style={{ backgroundColor: '#F68A1E' }}>
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Direct Tenant Connections</h3>
+                    <p className="text-gray-600">
+                      Connect directly with verified renters in Lagos. Manage inquiries, schedule viewings, and 
+                      communicate with potential tenants all through our secure, in-app messaging system.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Providers Section */}
+      <section className="bg-white py-20">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Content */}
+            <div>
+              <h2 className="text-4xl font-bold mb-6" style={{ color: '#00419c' }}>
+                Skilled Workers & Service Providers
+              </h2>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                Skilled workers and service providers connect with renters in their community easily on CribEasy. 
+                Showcase your services, build your reputation, and grow your local business by reaching renters 
+                right in your neighborhood.
+              </p>
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0" style={{ backgroundColor: '#F68A1E' }}>
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Create Your Service Profile</h3>
+                    <p className="text-gray-600">
+                      Build a professional profile showcasing your skills and services. List your specialties, 
+                      upload photos of your work, and set your service areas to connect with renters in your community.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0" style={{ backgroundColor: '#F68A1E' }}>
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Build Your Reputation</h3>
+                    <p className="text-gray-600">
+                      Receive reviews and ratings from satisfied renters in your community. Build trust and credibility 
+                      as a verified service provider, making it easier for renters to find and hire you.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0" style={{ backgroundColor: '#F68A1E' }}>
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Connect with Local Renters</h3>
+                    <p className="text-gray-600">
+                      Get discovered by renters in your neighborhood who need your services. Receive direct inquiries, 
+                      schedule appointments, and communicate with clients all through CribEasy&apos;s secure platform.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column - Image */}
+            <div className="flex justify-center items-center">
+              <div className="relative w-full max-w-md">
+                <Image
+                  src="/images/community-image.png"
+                  alt="Service Providers and Skilled Workers"
+                  width={400}
+                  height={400}
+                  className="w-full h-auto rounded-2xl object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* For Users Section */}
       <section id="for-users" className="bg-white py-20">
         <div className="container mx-auto px-6">
@@ -610,7 +823,8 @@ export default function Home() {
           </div>
         </div>
       </footer>
-    </div>
+      </div>
+    </>
   );
 }
 

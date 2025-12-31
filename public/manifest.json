@@ -1,0 +1,33 @@
+{
+  "name": "CribEasy - Community-Driven Real Estate Platform",
+  "short_name": "CribEasy",
+  "description": "Find verified rental listings, connect with neighbors, and discover your perfect neighborhood home.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#00419c",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/cribeasy-logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/cribeasy-logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["real estate", "lifestyle", "social"],
+  "screenshots": [
+    {
+      "src": "/images/cribeasy-hero.png",
+      "sizes": "400x600",
+      "type": "image/png"
+    }
+  ]
+}
+
