@@ -13,8 +13,8 @@ export default function Home() {
     "@type": "Organization",
     "name": "CribEasy",
     "description": "Community-driven real estate platform connecting renters, agents, and residents through verified listings and neighborhood insights",
-    "url": process.env.NEXT_PUBLIC_SITE_URL || "https://cribeasy.com",
-    "logo": `${process.env.NEXT_PUBLIC_SITE_URL || "https://cribeasy.com"}/images/cribeasy-logo.jpg`,
+    "url": process.env.NEXT_PUBLIC_SITE_URL || "https://cribeasyapp.com",
+    "logo": `${process.env.NEXT_PUBLIC_SITE_URL || "https://cribeasyapp.com"}/images/cribeasy-logo.jpg`,
     "sameAs": [
       "https://twitter.com/cribeasy",
       "https://facebook.com/cribeasy",
@@ -23,7 +23,7 @@ export default function Home() {
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "Customer Service",
-      "email": "support@cribeasy.com"
+      "email": "support@cribeasyapp.com"
     }
   };
 
@@ -31,12 +31,12 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "CribEasy",
-    "url": process.env.NEXT_PUBLIC_SITE_URL || "https://cribeasy.com",
+    "url": process.env.NEXT_PUBLIC_SITE_URL || "https://cribeasyapp.com",
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": `${process.env.NEXT_PUBLIC_SITE_URL || "https://cribeasy.com"}/search?q={search_term_string}`
+        "urlTemplate": `${process.env.NEXT_PUBLIC_SITE_URL || "https://cribeasyapp.com"}/search?q={search_term_string}`
       },
       "query-input": "required name=search_term_string"
     }
@@ -192,12 +192,12 @@ export default function Home() {
                   on Cribeasy
                 </h1>
                 <p className="text-gray-600 mb-8 leading-relaxed text-[20px] md:text-[22px]">
-                  A community-driven real estate platform connecting renters, agents, and residents through 
-                  verified listings, neighborhood insights, and trusted community connections.
+                The first community-driven real estate platform in Nigeria connecting you
+                with verified listings, trusted agents, and local insights
                 </p>
                 <div className="flex flex-col sm:flex-row items-center gap-4">
                   <button className="text-white px-8 py-5 rounded-full font-medium transition-colors shadow-lg w-full sm:w-auto text-[20px]" style={{ backgroundColor: '#00419c' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#003080'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#00419c'}>
-                    Get Started
+                    Download the App
                   </button>
                 </div>
               </div>
@@ -227,8 +227,8 @@ export default function Home() {
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-6" style={{ color: '#00419c' }}>How It Works</h2>
             <p className="text-lg text-gray-600 mb-16 leading-relaxed">
-              Get started with CribEasy in three simple steps. Find your perfect neighborhood home 
-              through our community-driven platform with verified listings and trusted connections.
+              Get started with CribEasy in three simple steps. Find your perfect property for rent or sale 
+              on Cribeasy with verified listings and trusted connections.
             </p>
 
             {/* Steps */}
@@ -241,10 +241,10 @@ export default function Home() {
                     {/* Connector Line to Step 2 */}
                     <div className="hidden md:block absolute top-1/2 left-full w-16 h-0.5 border-t-2 border-dashed border-gray-300" style={{ transform: 'translateY(-50%)', marginLeft: '2rem' }}></div>
                   </div>
-                  <h3 className="text-xl font-bold mb-6" style={{ color: '#00419c' }}>Join Your Neighborhood</h3>
+                  <h3 className="text-xl font-bold mb-6" style={{ color: '#00419c' }}>Join Your Community</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Sign up and select your community. Get verified with email or SMS to access 
-                    hyperlocal listings and neighborhood insights tailored to your area.
+                    Sign up and select your community to access 
+                    verified listings in your community.
                   </p>
                 </div>
 
@@ -257,8 +257,7 @@ export default function Home() {
                   </div>
                   <h3 className="text-xl font-bold mb-6" style={{ color: '#00419c' }}>Browse Verified Listings</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Explore verified rental properties from trusted agents and landlords. View 
-                    detailed neighborhood data, amenities, and community reviews to make informed decisions.
+                    Explore verified rental properties from trusted agents and landlords.
                   </p>
                 </div>
 
@@ -267,10 +266,10 @@ export default function Home() {
                   <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-8" style={{ backgroundColor: '#F68A1E' }}>
                     <FaHandshake className="text-2xl text-white" />
                   </div>
-                  <h3 className="text-xl font-bold mb-6" style={{ color: '#00419c' }}>Connect & Secure Your Home</h3>
+                  <h3 className="text-xl font-bold mb-6" style={{ color: '#00419c' }}>Secure Your Home</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Message agents and landlords directly through our secure platform. Schedule visits, 
-                    complete bookings, and join your new community with confidence.
+                    Message agents and landlords directly, 
+                    book an inspection and secure your home.
                   </p>
                 </div>
               </div>
@@ -305,7 +304,7 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Neighborhood Insights</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Community Based</h3>
             <p className="text-gray-600">
               Get hyperlocal data about amenities, safety ratings, transportation, and community vibes 
               for each neighborhood.
@@ -319,7 +318,7 @@ export default function Home() {
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-2">Community Engagement</h3>
             <p className="text-gray-600">
-              Connect with neighbors through forums, reviews, and local events. Build genuine 
+              Connect with neighbors and community members on the CribEasy App. Build genuine 
               neighborhood connections beyond property listings.
             </p>
           </div>
@@ -333,9 +332,9 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
               </svg>
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Direct Messaging</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Direct Chat with Agents</h3>
             <p className="text-gray-600">
-              Safely communicate with agents and landlords through our secure, in-app messaging system.
+              Safely communicate with agents and landlords through the CribEasy App chat system.
             </p>
           </div>
           <div className="bg-white p-8 rounded-xl">
@@ -344,9 +343,9 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
               </svg>
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Local Business Directory</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Local Arisan Directory</h3>
             <p className="text-gray-600">
-              Discover trusted artisans, shops, and services in your neighborhood, rated by the community.
+              Discover and book trusted artisans and service providers in your community on the CribEasy App.
             </p>
           </div>
           <div className="bg-white p-8 rounded-xl">
@@ -355,9 +354,9 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Event Calendar</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Get more visibility</h3>
             <p className="text-gray-600">
-              Browse and list community activities, events, and neighborhood gatherings to stay connected.
+              As a CribEasy agent ot landlord, let your property get more visibility and make more money in return.
             </p>
           </div>
         </div>
