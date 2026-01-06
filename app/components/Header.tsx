@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
@@ -11,6 +11,7 @@ export default function Header() {
   const [mobileCompanyOpen, setMobileCompanyOpen] = useState(false);
   const [currentHash, setCurrentHash] = useState("");
   const pathname = usePathname();
+  const companyDropdownRef = useRef<HTMLDivElement>(null);
   
   // Track hash changes
   useEffect(() => {
@@ -28,6 +29,26 @@ export default function Header() {
       window.removeEventListener("hashchange", updateHash);
     };
   }, []);
+
+  // Handle click outside for Company dropdown
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        companyDropdownRef.current &&
+        !companyDropdownRef.current.contains(event.target as Node)
+      ) {
+        setCompanyDropdownOpen(false);
+      }
+    };
+
+    if (companyDropdownOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [companyDropdownOpen]);
   
   // Helper function to check if a link is active
   const isActiveLink = (href: string) => {
@@ -131,25 +152,35 @@ export default function Header() {
             {/* Company Dropdown */}
             <div 
               className="relative"
-              onMouseEnter={() => setCompanyDropdownOpen(true)}
-              onMouseLeave={() => setCompanyDropdownOpen(false)}
+              ref={companyDropdownRef}
             >
               <button 
-                className="text-gray-700 px-3 py-2 rounded transition-colors flex items-center"
+                className="px-3 py-2 rounded transition-colors flex items-center"
                 style={{ 
-                  color: '#374151'
+                  backgroundColor: companyDropdownOpen ? '#00419c' : 'transparent',
+                  color: companyDropdownOpen ? '#ffffff' : '#374151'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#00419c';
-                  e.currentTarget.style.color = '#ffffff';
+                  if (!companyDropdownOpen) {
+                    e.currentTarget.style.backgroundColor = '#00419c';
+                    e.currentTarget.style.color = '#ffffff';
+                  }
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent';
-                  e.currentTarget.style.color = '#374151';
+                  if (!companyDropdownOpen) {
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                    e.currentTarget.style.color = '#374151';
+                  }
                 }}
+                onClick={() => setCompanyDropdownOpen(!companyDropdownOpen)}
               >
                 Company
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg 
+                  className={`w-4 h-4 ml-1 transition-transform ${companyDropdownOpen ? 'rotate-180' : ''}`}
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
@@ -167,6 +198,7 @@ export default function Header() {
                       e.currentTarget.style.backgroundColor = 'transparent';
                       e.currentTarget.style.color = '#374151';
                     }}
+                    onClick={() => setCompanyDropdownOpen(false)}
                   >
                     About Us
                   </Link>
@@ -182,6 +214,7 @@ export default function Header() {
                       e.currentTarget.style.backgroundColor = 'transparent';
                       e.currentTarget.style.color = '#374151';
                     }}
+                    onClick={() => setCompanyDropdownOpen(false)}
                   >
                     FAQ
                   </Link>
