@@ -1,11 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
 import { FaUserPlus, FaSearch, FaHandshake } from "react-icons/fa";
+import Header from "./components/Header";
 
 export default function Home() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Schema.org structured data
   const organizationSchema = {
@@ -78,104 +77,7 @@ export default function Home() {
       
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       {/* Navigation */}
-      <nav className="bg-white shadow-sm sticky top-0 z-50">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between relative">
-            {/* Logo */}
-            <div className="flex items-center flex-shrink-0">
-            <Image
-              src="/images/cribeasy-logo.jpg"
-              alt="CribEasy Logo"
-              width={180}
-              height={60}
-              className="h-14 w-auto"
-              priority
-            />
-            </div>
-
-            {/* Desktop Navigation - Centered (Large screens only) */}
-            <div className="hidden lg:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
-              <a href="#about" className="text-gray-700 hover:text-gray-900 transition-colors">About</a>
-              <a href="#how-it-works" className="text-gray-700 hover:text-gray-900 transition-colors">How It Works</a>
-              <a href="#features" className="text-gray-700 hover:text-gray-900 transition-colors">Features</a>
-              <a href="#for-users" className="text-gray-700 hover:text-gray-900 transition-colors">For Users</a>
-              <a href="#contact" className="text-gray-700 hover:text-gray-900 transition-colors">Contact</a>
-            </div>
-
-            {/* Desktop Buttons - Right (Large screens only) */}
-            <div className="hidden lg:flex items-center flex-shrink-0">
-              <button className="text-white px-6 py-3 rounded-full transition-colors font-medium text-base" style={{ backgroundColor: '#00419c' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#003080'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#00419c'}>
-                Join CribEasy
-              </button>
-            </div>
-
-            {/* Mobile/Tablet Menu Button */}
-            <button
-              className="lg:hidden p-2 text-gray-700 hover:text-gray-900"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
-            </button>
-          </div>
-
-          {/* Mobile/Tablet Menu */}
-          {mobileMenuOpen && (
-            <div className="lg:hidden mt-4 pb-4 border-t border-gray-200">
-              <div className="flex flex-col space-y-4 pt-4">
-                <a
-                  href="#about"
-                  className="text-gray-700 hover:text-gray-900 transition-colors py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  About
-                </a>
-                <a
-                  href="#features"
-                  className="text-gray-700 hover:text-gray-900 transition-colors py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Service
-                </a>
-                <a
-                  href="#for-users"
-                  className="text-gray-700 hover:text-gray-900 transition-colors py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Portfolio
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-700 hover:text-gray-900 transition-colors py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Blog
-                </a>
-                <a
-                  href="#contact"
-                  className="text-gray-700 hover:text-gray-900 transition-colors py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Contact
-                </a>
-                <div className="pt-2">
-                  <button className="text-white px-6 py-4 rounded-full transition-colors font-medium text-base w-full" style={{ backgroundColor: '#00419c' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#003080'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#00419c'}>
-                    Join CribEasy
-                  </button>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-      </nav>
+      <Header />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-white">
@@ -192,12 +94,12 @@ export default function Home() {
                   on Cribeasy
                 </h1>
                 <p className="text-gray-600 mb-8 leading-relaxed text-[20px] md:text-[22px]">
-                The first community-driven real estate platform in Nigeria connecting you
-                with verified listings, trusted agents, and local insights
+                  A community-driven real estate platform connecting renters, agents, and residents through 
+                  verified listings, neighborhood insights, and trusted community connections.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center gap-4">
                   <button className="text-white px-8 py-5 rounded-full font-medium transition-colors shadow-lg w-full sm:w-auto text-[20px]" style={{ backgroundColor: '#00419c' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#003080'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#00419c'}>
-                    Download the App
+                    Get Started
                   </button>
                 </div>
               </div>
@@ -227,8 +129,8 @@ export default function Home() {
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-6" style={{ color: '#00419c' }}>How It Works</h2>
             <p className="text-lg text-gray-600 mb-16 leading-relaxed">
-              Get started with CribEasy in three simple steps. Find your perfect property for rent or sale 
-              on Cribeasy with verified listings and trusted connections.
+              Get started with CribEasy in three simple steps. Find your perfect neighborhood home 
+              through our community-driven platform with verified listings and trusted connections.
             </p>
 
             {/* Steps */}
@@ -241,10 +143,10 @@ export default function Home() {
                     {/* Connector Line to Step 2 */}
                     <div className="hidden md:block absolute top-1/2 left-full w-16 h-0.5 border-t-2 border-dashed border-gray-300" style={{ transform: 'translateY(-50%)', marginLeft: '2rem' }}></div>
                   </div>
-                  <h3 className="text-xl font-bold mb-6" style={{ color: '#00419c' }}>Join Your Community</h3>
+                  <h3 className="text-xl font-bold mb-6" style={{ color: '#00419c' }}>Join Your Neighborhood</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Sign up and select your community to access 
-                    verified listings in your community.
+                    Sign up and select your community. Get verified with email or SMS to access 
+                    hyperlocal listings and neighborhood insights tailored to your area.
                   </p>
                 </div>
 
@@ -257,7 +159,8 @@ export default function Home() {
                   </div>
                   <h3 className="text-xl font-bold mb-6" style={{ color: '#00419c' }}>Browse Verified Listings</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Explore verified rental properties from trusted agents and landlords.
+                    Explore verified rental properties from trusted agents and landlords. View 
+                    detailed neighborhood data, amenities, and community reviews to make informed decisions.
                   </p>
                 </div>
 
@@ -266,10 +169,10 @@ export default function Home() {
                   <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-8" style={{ backgroundColor: '#F68A1E' }}>
                     <FaHandshake className="text-2xl text-white" />
                   </div>
-                  <h3 className="text-xl font-bold mb-6" style={{ color: '#00419c' }}>Secure Your Home</h3>
+                  <h3 className="text-xl font-bold mb-6" style={{ color: '#00419c' }}>Connect & Secure Your Home</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Message agents and landlords directly, 
-                    book an inspection and secure your home.
+                    Message agents and landlords directly through our secure platform. Schedule visits, 
+                    complete bookings, and join your new community with confidence.
                   </p>
                 </div>
               </div>
@@ -304,7 +207,7 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Community Based</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Neighborhood Insights</h3>
             <p className="text-gray-600">
               Get hyperlocal data about amenities, safety ratings, transportation, and community vibes 
               for each neighborhood.
@@ -318,7 +221,7 @@ export default function Home() {
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-2">Community Engagement</h3>
             <p className="text-gray-600">
-              Connect with neighbors and community members on the CribEasy App. Build genuine 
+              Connect with neighbors through forums, reviews, and local events. Build genuine 
               neighborhood connections beyond property listings.
             </p>
           </div>
@@ -332,9 +235,9 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
               </svg>
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Direct Chat with Agents</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Direct Messaging</h3>
             <p className="text-gray-600">
-              Safely communicate with agents and landlords through the CribEasy App chat system.
+              Safely communicate with agents and landlords through our secure, in-app messaging system.
             </p>
           </div>
           <div className="bg-white p-8 rounded-xl">
@@ -343,9 +246,9 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
               </svg>
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Local Arisan Directory</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Local Business Directory</h3>
             <p className="text-gray-600">
-              Discover and book trusted artisans and service providers in your community on the CribEasy App.
+              Discover trusted artisans, shops, and services in your neighborhood, rated by the community.
             </p>
           </div>
           <div className="bg-white p-8 rounded-xl">
@@ -354,9 +257,9 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Get more visibility</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Event Calendar</h3>
             <p className="text-gray-600">
-              As a CribEasy agent ot landlord, let your property get more visibility and make more money in return.
+              Browse and list community activities, events, and neighborhood gatherings to stay connected.
             </p>
           </div>
         </div>
@@ -780,22 +683,13 @@ export default function Home() {
       {/* Footer */}
       <footer id="contact" className="bg-gray-900 text-white py-12">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div>
               <h3 className="text-2xl font-bold mb-4">CribEasy</h3>
               <p className="text-gray-400">
                 Your trusted community-driven real estate platform. Find verified listings, 
                 connect with neighbors, and discover your perfect neighborhood home.
               </p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">For Users</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#for-users" className="hover:text-white transition-colors">For Renters</a></li>
-                <li><a href="#for-users" className="hover:text-white transition-colors">For Agents</a></li>
-                <li><a href="#for-users" className="hover:text-white transition-colors">For Landlords</a></li>
-                <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
-              </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Platform</h4>
@@ -807,12 +701,19 @@ export default function Home() {
               </ul>
             </div>
             <div>
+              <h4 className="font-semibold mb-4">Legal</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><a href="/eula" className="hover:text-white transition-colors">End User License Agreement</a></li>
+                <li><a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a></li>
+                <li><a href="/terms" className="hover:text-white transition-colors">Terms of Use</a></li>
+              </ul>
+            </div>
+            <div>
               <h4 className="font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Contact Support</a></li>
+                <li><a href="#contact" className="hover:text-white transition-colors">Contact Support</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Report Issue</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
               </ul>
             </div>
           </div>
