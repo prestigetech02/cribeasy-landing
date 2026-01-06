@@ -2,6 +2,7 @@
 
 import Header from "../components/Header";
 import Image from "next/image";
+import { FaBullseye, FaEye } from "react-icons/fa";
 
 export default function AboutPage() {
   return (
@@ -58,6 +59,67 @@ export default function AboutPage() {
                   <p className="text-gray-500 text-sm">Image 3</p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Vision Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Our Mission */}
+            <div 
+              className="bg-gray-50 rounded-xl p-8 transition-all duration-300 cursor-pointer"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#f0f4f8';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.05)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#f9fafb';
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: '#00419c' }}>
+                <FaBullseye className="text-white text-2xl" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: '#00419c' }}>
+                Our Mission
+              </h2>
+              <p className="text-base text-gray-700 leading-relaxed">
+                To revolutionize the real estate rental experience by creating a trusted, community-driven platform 
+                that connects renters with verified properties and fosters genuine neighborhood connections. We aim 
+                to make finding a home seamless, transparent, and community-focused.
+              </p>
+            </div>
+
+            {/* Our Vision */}
+            <div 
+              className="bg-gray-50 rounded-xl p-8 transition-all duration-300 cursor-pointer"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#f0f4f8';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.05)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#f9fafb';
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: '#00419c' }}>
+                <FaEye className="text-white text-2xl" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: '#00419c' }}>
+                Our Vision
+              </h2>
+              <p className="text-base text-gray-700 leading-relaxed">
+                To become the leading community-driven real estate platform in Nigeria and beyond, where every renter 
+                finds their perfect home, every agent connects with verified clients, and every neighborhood thrives 
+                through genuine connections and trusted relationships.
+              </p>
             </div>
           </div>
         </div>
