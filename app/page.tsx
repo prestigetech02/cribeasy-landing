@@ -3,8 +3,69 @@
 import Image from "next/image";
 import { FaUserPlus, FaSearch, FaHandshake } from "react-icons/fa";
 import Header from "./components/Header";
+import { useState, useEffect } from "react";
+
+interface Property {
+  id: number;
+  property_title: string;
+  property_ref_id: string;
+  property_cover: string;
+  cloudinary_id: string | null;
+  property_category: string;
+  favorited_by_me: boolean;
+  is_active: number;
+  is_boosted: number;
+  reviews_count: number;
+  average_stars: number;
+  property_detail: {
+    id: number;
+    property_address: string;
+    rent_price: string;
+  };
+}
 
 export default function Home() {
+  const [properties, setProperties] = useState<Property[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProperties = async () => {
+      try {
+        const response = await fetch('https://cribeasyapp.com/api/v1/landing/properties');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        if (data.success && data.data && Array.isArray(data.data)) {
+          // Limit to 12 properties (3 rows x 4 columns)
+          setProperties(data.data.slice(0, 12));
+        } else {
+          console.error('Unexpected response format:', data);
+        }
+      } catch (error) {
+        console.error('Error fetching properties:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProperties();
+  }, []);
+
+  const formatPrice = (price: string) => {
+    const numPrice = parseFloat(price);
+    if (numPrice >= 1000000) {
+      return `₦${(numPrice / 1000000).toFixed(1)}M`;
+    } else if (numPrice >= 1000) {
+      return `₦${(numPrice / 1000).toFixed(0)}K`;
+    }
+    return `₦${numPrice.toLocaleString()}`;
+  };
+
+  const truncateText = (text: string, maxLength: number) => {
+    if (text.length <= maxLength) return text;
+    return text.substring(0, maxLength) + '...';
+  };
 
   // Schema.org structured data
   const organizationSchema = {
@@ -119,6 +180,82 @@ export default function Home() {
               </div>
             </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Properties Listings Section */}
+      <section className="bg-white py-20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-4xl font-bold mb-12 text-center" style={{ color: '#00419c' }}>
+              Featured Properties
+            </h2>
+            
+            {loading ? (
+              <div className="text-center py-12">
+                <p className="text-gray-600">Loading properties...</p>
+              </div>
+            ) : properties.length === 0 ? (
+              <div className="text-center py-12">
+                <p className="text-gray-600">No properties available at the moment.</p>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {properties.map((property) => (
+                  <div
+                    key={property.id}
+                    className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100"
+                  >
+                    {/* Image Container */}
+                    <div className="relative h-48 w-full">
+                      {property.is_boosted === 1 && (
+                        <div className="absolute top-2 left-2 z-10 bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                          Featured
+                        </div>
+                      )}
+                      <Image
+                        src={property.property_cover || '/images/placeholder-property.jpg'}
+                        alt={property.property_title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      />
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="p-4">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-1">
+                        {property.property_title}
+                      </h3>
+                      <p className="text-sm text-gray-600 mb-3 line-clamp-2 min-h-[2.5rem]">
+                        {truncateText(
+                          `${property.property_category} located in ${property.property_detail?.property_address || 'Lagos'}. ${property.reviews_count > 0 ? `Rated ${property.average_stars} stars by ${property.reviews_count} ${property.reviews_count === 1 ? 'reviewer' : 'reviewers'}.` : 'Modern amenities and community-focused living.'}`,
+                          120
+                        )}
+                      </p>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center text-gray-500 text-sm">
+                          <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                          </svg>
+                          <span className="line-clamp-1">{property.property_detail?.property_address || 'Lagos'}</span>
+                        </div>
+                      </div>
+                      {property.property_detail?.rent_price && parseFloat(property.property_detail.rent_price) > 0 && (
+                        <div className="mt-3 pt-3 border-t border-gray-100">
+                          <p className="text-lg font-bold" style={{ color: '#00419c' }}>
+                            {formatPrice(property.property_detail.rent_price)}
+                            <span className="text-sm font-normal text-gray-500">/year</span>
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>
