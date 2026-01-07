@@ -105,20 +105,20 @@ export default function Header() {
               Home
             </Link>
             <Link 
-              href="/#features" 
+              href="/features" 
               className="px-3 py-2 rounded transition-colors"
               style={{ 
-                backgroundColor: isActiveLink("/#features") ? '#00419c' : 'transparent',
-                color: isActiveLink("/#features") ? '#ffffff' : '#374151'
+                backgroundColor: isActiveLink("/features") ? '#00419c' : 'transparent',
+                color: isActiveLink("/features") ? '#ffffff' : '#374151'
               }}
               onMouseEnter={(e) => {
-                if (!isActiveLink("/#features")) {
+                if (!isActiveLink("/features")) {
                   e.currentTarget.style.backgroundColor = '#00419c';
                   e.currentTarget.style.color = '#ffffff';
                 }
               }}
               onMouseLeave={(e) => {
-                if (!isActiveLink("/#features")) {
+                if (!isActiveLink("/features")) {
                   e.currentTarget.style.backgroundColor = 'transparent';
                   e.currentTarget.style.color = '#374151';
                 }
@@ -203,16 +203,23 @@ export default function Header() {
                     About Us
                   </Link>
                   <Link 
-                    href="/#faq" 
+                    href="/faq" 
                     className="block px-4 py-2 text-gray-700 transition-colors rounded mx-2"
-                    style={{ color: '#374151' }}
+                    style={{ 
+                      backgroundColor: isActiveLink("/faq") ? '#00419c' : 'transparent',
+                      color: isActiveLink("/faq") ? '#ffffff' : '#374151'
+                    }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = '#00419c';
-                      e.currentTarget.style.color = '#ffffff';
+                      if (!isActiveLink("/faq")) {
+                        e.currentTarget.style.backgroundColor = '#00419c';
+                        e.currentTarget.style.color = '#ffffff';
+                      }
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = 'transparent';
-                      e.currentTarget.style.color = '#374151';
+                      if (!isActiveLink("/faq")) {
+                        e.currentTarget.style.backgroundColor = 'transparent';
+                        e.currentTarget.style.color = '#374151';
+                      }
                     }}
                     onClick={() => setCompanyDropdownOpen(false)}
                   >
@@ -299,20 +306,20 @@ export default function Header() {
                 Home
               </Link>
               <Link
-                href="/#features"
+                href="/features"
                 className="px-4 py-2 rounded transition-colors"
                 style={{ 
-                  backgroundColor: isActiveLink("/#features") ? '#00419c' : 'transparent',
-                  color: isActiveLink("/#features") ? '#ffffff' : '#374151'
+                  backgroundColor: isActiveLink("/features") ? '#00419c' : 'transparent',
+                  color: isActiveLink("/features") ? '#ffffff' : '#374151'
                 }}
                 onMouseEnter={(e) => {
-                  if (!isActiveLink("/#features")) {
+                  if (!isActiveLink("/features")) {
                     e.currentTarget.style.backgroundColor = '#00419c';
                     e.currentTarget.style.color = '#ffffff';
                   }
                 }}
                 onMouseLeave={(e) => {
-                  if (!isActiveLink("/#features")) {
+                  if (!isActiveLink("/features")) {
                     e.currentTarget.style.backgroundColor = 'transparent';
                     e.currentTarget.style.color = '#374151';
                   }
@@ -392,16 +399,23 @@ export default function Header() {
                       About Us
                     </Link>
                     <Link
-                      href="/#faq"
+                      href="/faq"
                       className="block text-gray-600 px-4 py-2 rounded transition-colors"
-                      style={{ color: '#4B5563' }}
+                      style={{ 
+                        backgroundColor: isActiveLink("/faq") ? '#00419c' : 'transparent',
+                        color: isActiveLink("/faq") ? '#ffffff' : '#4B5563'
+                      }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = '#00419c';
-                        e.currentTarget.style.color = '#ffffff';
+                        if (!isActiveLink("/faq")) {
+                          e.currentTarget.style.backgroundColor = '#00419c';
+                          e.currentTarget.style.color = '#ffffff';
+                        }
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = 'transparent';
-                        e.currentTarget.style.color = '#4B5563';
+                        if (!isActiveLink("/faq")) {
+                          e.currentTarget.style.backgroundColor = 'transparent';
+                          e.currentTarget.style.color = '#4B5563';
+                        }
                       }}
                       onClick={() => {
                         setMobileMenuOpen(false);

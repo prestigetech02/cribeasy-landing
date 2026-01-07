@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { FaUserPlus, FaSearch, FaHandshake } from "react-icons/fa";
 import Header from "./components/Header";
 import { useState, useEffect } from "react";
 
@@ -142,7 +141,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-white">
-        <div className="container mx-auto px-6 pt-6 pb-12 md:pt-8 md:pb-20">
+        <div className="container mx-auto px-6 pt-6 pb-6 md:pt-8 md:pb-8">
           <div className="bg-blue-50 rounded-2xl px-4 py-8 md:px-6 md:py-12 lg:px-8 lg:py-16" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 0 100%)' }}>
             <div className="grid md:grid-cols-2 gap-8 items-end">
             {/* Left Column - Text Content */}
@@ -185,7 +184,7 @@ export default function Home() {
       </section>
 
       {/* Properties Listings Section */}
-      <section className="bg-white py-20">
+      <section className="bg-white pt-8 pb-20">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold mb-12 text-center" style={{ color: '#00419c' }}>
@@ -214,6 +213,9 @@ export default function Home() {
                           Featured
                         </div>
                       )}
+                      <div className="absolute top-2 right-2 z-10 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                        {property.property_category}
+                      </div>
                       <Image
                         src={property.property_cover || '/images/placeholder-property.jpg'}
                         alt={property.property_title}
@@ -256,64 +258,6 @@ export default function Home() {
                 ))}
               </div>
             )}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works Section */}
-      <section className="bg-white py-24">
-        <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-6" style={{ color: '#00419c' }}>How It Works</h2>
-            <p className="text-lg text-gray-600 mb-16 leading-relaxed">
-              Get started with CribEasy in three simple steps. Find your perfect neighborhood home 
-              through our community-driven platform with verified listings and trusted connections.
-            </p>
-
-            {/* Steps */}
-            <div className="relative">
-              <div className="grid md:grid-cols-3 gap-12 md:gap-16 relative">
-                {/* Step 1 */}
-                <div className="text-center relative z-10">
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-8 relative" style={{ backgroundColor: '#F68A1E' }}>
-                    <FaUserPlus className="text-2xl text-white" />
-                    {/* Connector Line to Step 2 */}
-                    <div className="hidden md:block absolute top-1/2 left-full w-16 h-0.5 border-t-2 border-dashed border-gray-300" style={{ transform: 'translateY(-50%)', marginLeft: '2rem' }}></div>
-                  </div>
-                  <h3 className="text-xl font-bold mb-6" style={{ color: '#00419c' }}>Join Your Neighborhood</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Sign up and select your community. Get verified with email or SMS to access 
-                    hyperlocal listings and neighborhood insights tailored to your area.
-                  </p>
-                </div>
-
-                {/* Step 2 */}
-                <div className="text-center relative z-10">
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-8 relative" style={{ backgroundColor: '#F68A1E' }}>
-                    <FaSearch className="text-2xl text-white" />
-                    {/* Connector Line to Step 3 */}
-                    <div className="hidden md:block absolute top-1/2 left-full w-16 h-0.5 border-t-2 border-dashed border-gray-300" style={{ transform: 'translateY(-50%)', marginLeft: '2rem' }}></div>
-                  </div>
-                  <h3 className="text-xl font-bold mb-6" style={{ color: '#00419c' }}>Browse Verified Listings</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Explore verified rental properties from trusted agents and landlords. View 
-                    detailed neighborhood data, amenities, and community reviews to make informed decisions.
-                  </p>
-                </div>
-
-                {/* Step 3 */}
-                <div className="text-center relative z-10">
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-8" style={{ backgroundColor: '#F68A1E' }}>
-                    <FaHandshake className="text-2xl text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-6" style={{ color: '#00419c' }}>Connect & Secure Your Home</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Message agents and landlords directly through our secure platform. Schedule visits, 
-                    complete bookings, and join your new community with confidence.
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -674,17 +618,17 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">For Agents</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">For Agents & Landlords</h3>
               <p className="text-gray-600 mb-4">
                 Get verified and reach more clients in your neighborhood. Manage listings, track inquiries, 
-                and grow your business.
+                and grow your business. List your properties directly to verified renters in your community.
               </p>
               <ul className="text-left text-gray-600 space-y-2">
                 <li className="flex items-center">
                   <svg className="w-5 h-5 text-purple-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  Verified agent profile
+                  Verified agent profile & direct listings
                 </li>
                 <li className="flex items-center">
                   <svg className="w-5 h-5 text-purple-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -696,103 +640,42 @@ export default function Home() {
                   <svg className="w-5 h-5 text-purple-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  Premium subscription options
+                  Application tracking & tenant management
                 </li>
               </ul>
             </div>
-            <div className="text-center p-8 rounded-xl bg-green-50">
-              <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="text-center p-8 rounded-xl bg-orange-50">
+              <div className="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">For Landlords</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">For Artisans</h3>
               <p className="text-gray-600 mb-4">
-                List your properties directly to verified renters in your community. Manage applications 
-                and connect with potential tenants.
+                Showcase your skills and services to renters in your community. Build your reputation, 
+                get discovered, and grow your local business.
               </p>
               <ul className="text-left text-gray-600 space-y-2">
                 <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-orange-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  Direct property listings
+                  Create your service profile
                 </li>
                 <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-orange-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  Application tracking
+                  Build your reputation with reviews
                 </li>
                 <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-orange-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  &quot;For Rent by Neighbor&quot; option
+                  Connect with local renters
                 </li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="container mx-auto px-6 py-20">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-6">About CribEasy</h2>
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <p className="text-lg text-gray-600 leading-relaxed mb-6">
-              CribEasy is a community-driven real estate platform that connects renters, agents, and residents 
-              through neighborhood-based insights, verified listings, and social tools that foster trust, 
-              transparency, and community integration.
-            </p>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-3">Our Mission</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Simplify the house-hunting process through hyper-local listings
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Reduce fraud with verified agents and landlords
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Encourage community engagement through local forums
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-3">Key Benefits</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Access to verified rental listings
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Community forums and events to connect with neighbors
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Detailed neighborhood profiles with real context
-                  </li>
-                </ul>
-              </div>
             </div>
           </div>
         </div>
