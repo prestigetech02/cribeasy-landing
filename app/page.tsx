@@ -143,10 +143,10 @@ export default function Home() {
       <section className="relative overflow-hidden bg-white">
         <div className="container mx-auto px-6 pt-6 pb-6 md:pt-8 md:pb-8">
           <div className="bg-blue-50 rounded-2xl px-4 py-8 md:px-6 md:py-12 lg:px-8 lg:py-16" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 0 100%)' }}>
-            <div className="grid md:grid-cols-2 gap-8 items-end">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
             {/* Left Column - Text Content */}
             <div className="relative z-10">
-              <div className="px-4 py-8 md:px-6 md:py-12">
+              <div className="px-4 py-8 md:px-6 md:py-12 text-center md:text-left">
                 <p className="text-gray-500 mb-4 text-[18px]">Welcome to CribEasy</p>
                 <h1 className="font-bold mb-6 leading-tight text-[38px] md:text-[40px] lg:text-[52px]" style={{ color: '#00419c' }}>
                   Find Your Perfect Home{" "}
@@ -157,7 +157,7 @@ export default function Home() {
                   A community-driven real estate platform connecting renters, agents, and residents through 
                   verified listings, neighborhood insights, and trusted community connections.
                 </p>
-                <div className="flex flex-col sm:flex-row items-center gap-4">
+                <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
                   <button className="text-white px-8 py-5 rounded-full font-medium transition-colors shadow-lg w-full sm:w-auto text-[20px]" style={{ backgroundColor: '#00419c' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#003080'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#00419c'}>
                     Get Started
                   </button>
@@ -166,10 +166,10 @@ export default function Home() {
             </div>
 
             {/* Right Column - Mobile Mockup */}
-            <div className="flex justify-center items-end relative z-10">
+            <div className="flex justify-center items-center relative z-10">
               <div className="relative w-full max-w-sm">
                 <Image
-                  src="/images/cribeasy-hero.png"
+                  src="/images/home-1.png"
                   alt="CribEasy Mobile App"
                   width={400}
                   height={600}

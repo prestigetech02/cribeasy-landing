@@ -186,17 +186,17 @@ export default function FeaturesPage() {
       {/* Hero Section */}
       <section className="py-16">
         <div className="container mx-auto px-6">
-          <div className="w-full rounded-[32px] py-16 px-8 md:px-12" style={{ backgroundColor: '#00419c' }}>
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="w-full rounded-[32px] py-8 md:py-12 px-8 md:px-12 overflow-hidden" style={{ backgroundColor: '#00419c' }}>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
               {/* Left Column - Image */}
               <div className="flex justify-center items-center">
-                <div className="relative w-full max-w-md">
+                <div className="relative w-[200px]">
                   <Image
                     src="/images/sp.png"
                     alt="Platform Features"
-                    width={400}
-                    height={400}
-                    className="w-full h-auto rounded-2xl object-cover"
+                    width={100}
+                    height={1200}
+                    className="w-full h-auto rounded-2xl object-contain"
                   />
                 </div>
               </div>
