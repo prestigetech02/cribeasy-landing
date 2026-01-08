@@ -154,7 +154,7 @@ export default function Home() {
                   on Cribeasy
                 </h1>
                 <p className="text-gray-600 mb-8 leading-relaxed text-[20px] md:text-[22px]">
-                  A community-driven real estate platform connecting renters, agents, and residents through 
+                  A community-driven real estate platform connecting renters, agents, and service providers through 
                   verified listings, neighborhood insights, and trusted community connections.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
@@ -178,7 +178,7 @@ export default function Home() {
                 />
               </div>
             </div>
-            </div>
+           </div>
           </div>
         </div>
       </section>
@@ -354,11 +354,10 @@ export default function Home() {
             {/* Left Column - Renters Info */}
             <div>
               <h2 className="text-4xl font-bold mb-6" style={{ color: '#00419c' }}>
-                Search properties in your Community
+                Are you a renter in Lagos?
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                CribEasy isn&apos;t just about finding a place to live—it&apos;s about becoming part of a vibrant community. 
-                Connect with neighbors, discover local events, and build lasting relationships in your new neighborhood.
+                CribEasy isn&apos;t just about finding a place to live, it&apos;s about becoming part of a vibrant community in Lagos. 
               </p>
               <div className="space-y-6">
                 <div className="flex items-start">
@@ -370,8 +369,7 @@ export default function Home() {
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Connect with Neighbors</h3>
                     <p className="text-gray-600">
-                      Join community forums, participate in discussions, and get to know the people who make your 
-                      neighborhood special. Share recommendations, ask questions, and build genuine connections.
+                      Join community forums, participate in discussions, share recommendations, ask questions, and build genuine connections.
                     </p>
                   </div>
                 </div>
@@ -382,10 +380,9 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Discover Local Events</h3>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Search for Artisans</h3>
                     <p className="text-gray-600">
-                      Stay updated on neighborhood gatherings, community events, and local activities. From block 
-                      parties to farmers markets, never miss out on what&apos;s happening in your area.
+                      Stay updated on artisans who can help you with your home repairs and maintenance. All on Cribeasy.
                     </p>
                   </div>
                 </div>
@@ -396,10 +393,9 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Explore Local Businesses</h3>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Chat with Agents before inspection</h3>
                     <p className="text-gray-600">
-                      Find trusted local services, restaurants, and shops recommended by your neighbors. Support 
-                      community businesses and discover hidden gems in your neighborhood.
+                      Agents on CribEasy are ready to hear from you. Ask about the property you are interested in before inspection.
                     </p>
                   </div>
                 </div>
@@ -430,7 +426,7 @@ export default function Home() {
             <div className="flex justify-center items-center order-2 md:order-1">
               <div className="relative w-full max-w-md">
                 <Image
-                  src="/images/community-image.png"
+                  src="/images/agent-chat.png"
                   alt="Community Connection"
                   width={400}
                   height={400}
@@ -445,8 +441,7 @@ export default function Home() {
                 Are you a Lagos agent/landlord?
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                List your properties for free on CribEasy and reach thousands of verified renters in Lagos. 
-                Get verified, manage your listings, and connect directly with potential tenants—all at no cost.
+              Get verified, list your properties for free on CribEasy and reach thousands of verified renters in Lagos. 
               </p>
               <div className="space-y-6">
                 <div className="flex items-start">
@@ -458,8 +453,8 @@ export default function Home() {
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Free Property Listings</h3>
                     <p className="text-gray-600">
-                      List unlimited properties on CribEasy at absolutely no cost. No hidden fees, no commission 
-                      charges—just free access to our platform to showcase your properties to verified renters.
+                      List your properties on CribEasy at absolutely no cost. No hidden fees, no commission 
+                      charges.
                     </p>
                   </div>
                 </div>
@@ -470,9 +465,9 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Get Verified & Build Trust</h3>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Get messages from renters</h3>
                     <p className="text-gray-600">
-                      Complete our quick verification process to get a verified badge. Verified agents and landlords 
+                     Get messages from renters directly to your DM on CribEasy.
                       receive more inquiries and build trust with potential tenants faster.
                     </p>
                   </div>
@@ -484,10 +479,10 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Direct Tenant Connections</h3>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Direct renters connections</h3>
                     <p className="text-gray-600">
-                      Connect directly with verified renters in Lagos. Manage inquiries, schedule viewings, and 
-                      communicate with potential tenants all through our secure, in-app messaging system.
+                      Connect directly with verified renters in Lagos. Manage inquiries, schedule inspections, and 
+                      communicate with potential tenants on CribEasy.
                     </p>
                   </div>
                 </div>
@@ -507,9 +502,7 @@ export default function Home() {
                 Skilled Workers & Service Providers
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Skilled workers and service providers connect with renters in their community easily on CribEasy. 
-                Showcase your services, build your reputation, and grow your local business by reaching renters 
-                right in your neighborhood.
+                Artisans and service providers connect with renters in their community easily on CribEasy. 
               </p>
               <div className="space-y-6">
                 <div className="flex items-start">
@@ -521,8 +514,8 @@ export default function Home() {
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Create Your Service Profile</h3>
                     <p className="text-gray-600">
-                      Build a professional profile showcasing your skills and services. List your specialties, 
-                      upload photos of your work, and set your service areas to connect with renters in your community.
+                      Build a professional profile showcasing your skills and services.
+                      And let renters find you easily on CribEasy.
                     </p>
                   </div>
                 </div>
@@ -535,8 +528,7 @@ export default function Home() {
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Build Your Reputation</h3>
                     <p className="text-gray-600">
-                      Receive reviews and ratings from satisfied renters in your community. Build trust and credibility 
-                      as a verified service provider, making it easier for renters to find and hire you.
+                      Receive reviews and ratings from satisfied renters in your community making it easier for renters to find and hire you.
                     </p>
                   </div>
                 </div>
