@@ -186,25 +186,26 @@ export default function FeaturesPage() {
       {/* Hero Section */}
       <section className="py-16">
         <div className="container mx-auto px-6">
-          <div className="w-full rounded-[32px] py-8 md:py-12 px-8 md:px-12 overflow-hidden" style={{ backgroundColor: '#00419c' }}>
-            <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="w-full rounded-[32px] pb-8 md:pb-12 pt-0 px-8 md:px-12 overflow-hidden" style={{ backgroundColor: '#00419c' }}>
+            <div className="grid md:grid-cols-2 gap-8 items-end">
               {/* Left Column - Image */}
-              <div className="flex justify-center items-center">
-                <div className="relative w-[200px]">
+              <div className="flex justify-center items-end">
+                <div className="relative w-full max-w-md mx-auto">
                   <Image
-                    src="/images/sp.png"
+                    src="/images/features.png"
                     alt="Platform Features"
-                    width={100}
-                    height={1200}
+                    width={400}
+                    height={600}
                     className="w-full h-auto rounded-2xl object-contain"
+                    quality={100}
                   />
                 </div>
               </div>
               
               {/* Right Column - Text Content */}
-              <div className="text-center md:text-left">
-                <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-                  Platform Features
+              <div className="text-center md:text-left mx-auto mt-0 pt-0">
+                <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white mt-0 pt-0">
+                  We are not just a platform
                 </h1>
                 <p className="text-xl text-white/90">
                   Everything you need to find your perfect home and connect with your community, all in one place.
@@ -294,10 +295,10 @@ export default function FeaturesPage() {
                 aria-label="Download on App Store"
               >
                 <Image
-                  src="/images/appstore.jpg"
+                  src="/images/gp.svg"
                   alt="Download on App Store"
-                  width={180}
-                  height={60}
+                  width={218}
+                  height={78}
                   className="h-12 w-auto rounded-2xl"
                 />
               </a>
@@ -307,10 +308,10 @@ export default function FeaturesPage() {
                 aria-label="Get it on Google Play"
               >
                 <Image
-                  src="/images/playstore.png"
+                  src="/images/ap.svg"
                   alt="Get it on Google Play"
-                  width={180}
-                  height={60}
+                  width={218}
+                  height={78}
                   className="h-12 w-auto rounded-2xl"
                 />
               </a>

@@ -352,7 +352,7 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Column - Renters Info */}
-            <div>
+            <div className="order-2 md:order-1">
               <h2 className="text-4xl font-bold mb-6" style={{ color: '#00419c' }}>
                 Are you a renter in Lagos?
               </h2>
@@ -403,10 +403,10 @@ export default function Home() {
             </div>
 
             {/* Right Column - Image */}
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center order-1 md:order-2">
               <div className="relative w-full max-w-md">
                 <Image
-                  src="/images/community-image.png"
+                  src="/images/agent-chat.png"
                   alt="Community Connection"
                   width={400}
                   height={400}
@@ -423,7 +423,7 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Column - Image */}
-            <div className="flex justify-center items-center order-2 md:order-1">
+            <div className="flex justify-center items-center order-1 md:order-1">
               <div className="relative w-full max-w-md">
                 <Image
                   src="/images/agent-chat.png"
@@ -436,7 +436,7 @@ export default function Home() {
             </div>
 
             {/* Right Column - Content */}
-            <div className="order-1 md:order-2">
+            <div className="order-2 md:order-2">
               <h2 className="text-4xl font-bold mb-6" style={{ color: '#00419c' }}>
                 Are you a Lagos agent/landlord?
               </h2>
@@ -497,7 +497,7 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Column - Content */}
-            <div>
+            <div className="order-2 md:order-1">
               <h2 className="text-4xl font-bold mb-6" style={{ color: '#00419c' }}>
                 Skilled Workers & Service Providers
               </h2>
@@ -539,7 +539,7 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Connect with Local Renters</h3>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Connect with Renters in your community</h3>
                     <p className="text-gray-600">
                       Get discovered by renters in your neighborhood who need your services. Receive direct inquiries, 
                       schedule appointments, and communicate with clients all through CribEasy&apos;s secure platform.
@@ -550,10 +550,10 @@ export default function Home() {
             </div>
 
             {/* Right Column - Image */}
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center order-1 md:order-2">
               <div className="relative w-full max-w-md">
                 <Image
-                  src="/images/community-image.png"
+                  src="/images/service-provider.png"
                   alt="Service Providers and Skilled Workers"
                   width={400}
                   height={400}
@@ -675,20 +675,40 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="container mx-auto px-6 py-20">
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-12 text-center text-white">
+        <div className="rounded-2xl p-12 text-center text-white" style={{ backgroundColor: '#00419c' }}>
           <h2 className="text-4xl font-bold mb-4">Ready to Find Your Perfect Home?</h2>
           <p className="text-xl mb-8 opacity-90">
             Join our community-driven platform and experience trusted, verified real estate listings 
             in your neighborhood.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 px-8 py-5 rounded-full text-base font-medium hover:bg-gray-100 transition-colors">
-              Start Searching
-            </button>
-            <button className="bg-transparent border-2 border-white text-white px-8 py-5 rounded-full text-base font-medium hover:bg-white hover:text-blue-600 transition-colors">
-              Become an Agent
-            </button>
-          </div>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <a
+                href="#"
+                className="inline-block transition-transform hover:scale-105 rounded-2xl overflow-hidden"
+                aria-label="Download on App Store"
+              >
+                <Image
+                  src="/images/gp.svg"
+                  alt="Download on App Store"
+                  width={218}
+                  height={78}
+                  className="h-12 w-auto rounded-2xl"
+                />
+              </a>
+              <a
+                href="#"
+                className="inline-block transition-transform hover:scale-105 rounded-2xl overflow-hidden"
+                aria-label="Get it on Google Play"
+              >
+                <Image
+                  src="/images/ap.svg"
+                  alt="Get it on Google Play"
+                  width={218}
+                  height={78}
+                  className="h-12 w-auto rounded-2xl"
+                />
+              </a>
+            </div>
         </div>
       </section>
 
