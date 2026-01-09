@@ -168,7 +168,7 @@ export default function PricingPage() {
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">Free</h3>
                     <div className="mb-4">
                       <span className="text-5xl font-bold" style={{ color: '#00419c' }}>₦0</span>
-                      <span className="text-gray-600 ml-2">forever</span>
+                      <span className="text-gray-600 ml-2">to join</span>
                     </div>
                     <p className="text-gray-600">Perfect for renters and getting started</p>
                   </div>

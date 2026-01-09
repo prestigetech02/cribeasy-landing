@@ -142,8 +142,8 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-white">
         <div className="container mx-auto px-6 pt-6 pb-6 md:pt-8 md:pb-8">
-          <div className="bg-blue-50 rounded-2xl px-4 py-8 md:px-6 md:py-12 lg:px-8 lg:py-16" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 0 100%)' }}>
-            <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="bg-blue-50 rounded-2xl px-4 py-8 md:px-6 md:py-12 lg:px-8 lg:py-16" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 92%, 0 100%)' }}>
+            <div className="grid md:grid-cols-2 gap-8 items-center pb-12 md:pb-0">
             {/* Left Column - Text Content */}
             <div className="relative z-10">
               <div className="px-4 py-8 md:px-6 md:py-12 text-center md:text-left">
@@ -184,7 +184,7 @@ export default function Home() {
       </section>
 
       {/* Properties Listings Section */}
-      <section className="bg-white pt-8 pb-20">
+      <section className="bg-white pt-8 pb-12">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold mb-12 text-center" style={{ color: '#00419c' }}>
@@ -263,7 +263,7 @@ export default function Home() {
       </section>
 
       {/* Key Features Section */}
-      <section id="features" className="bg-blue-50/30 py-20">
+      <section id="features" className="bg-blue-50/30 py-12">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
             Why Choose CribEasy?
@@ -302,7 +302,7 @@ export default function Home() {
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-2">Community Engagement</h3>
             <p className="text-gray-600">
-              Connect with neighbors through forums, reviews, and local events. Build genuine 
+              Connect with neighbors through chats and community engagement. Build genuine 
               neighborhood connections beyond property listings.
             </p>
           </div>
@@ -348,7 +348,7 @@ export default function Home() {
       </section>
 
       {/* Community Section */}
-      <section className="bg-white py-20">
+      <section className="bg-white py-12">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Column - Renters Info */}
@@ -406,7 +406,7 @@ export default function Home() {
             <div className="flex justify-center items-center order-1 md:order-2">
               <div className="relative w-full max-w-md">
                 <Image
-                  src="/images/community-image.png"
+                  src="/images/renter.png"
                   alt="Community Connection"
                   width={400}
                   height={400}
@@ -419,14 +419,14 @@ export default function Home() {
       </section>
 
       {/* Community Section - Duplicate with Swapped Columns */}
-      <section className="bg-white py-20">
+      <section className="bg-white py-12">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Column - Image */}
             <div className="flex justify-center items-center order-1 md:order-1">
               <div className="relative w-full max-w-md">
                 <Image
-                  src="/images/agent-chat.png"
+                  src="/images/agents-image.png"
                   alt="Community Connection"
                   width={400}
                   height={400}
@@ -493,7 +493,7 @@ export default function Home() {
       </section>
 
       {/* Service Providers Section */}
-      <section className="bg-white py-20">
+      <section className="bg-white py-12">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Column - Content */}
@@ -566,7 +566,7 @@ export default function Home() {
       </section>
 
       {/* For Users Section */}
-      <section id="for-users" className="bg-white py-20">
+      <section id="for-users" className="bg-white py-12">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
             Built for Everyone
@@ -600,7 +600,7 @@ export default function Home() {
                   <svg className="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  Community forums & events
+                  Get professional artisans for your services.
                 </li>
               </ul>
             </div>
@@ -674,7 +674,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="container mx-auto px-6 py-20">
+      <section className="container mx-auto px-6 py-12">
         <div className="rounded-2xl p-12 text-center text-white" style={{ backgroundColor: '#00419c' }}>
           <h2 className="text-4xl font-bold mb-4">Ready to Find Your Perfect Home?</h2>
           <p className="text-xl mb-8 opacity-90">

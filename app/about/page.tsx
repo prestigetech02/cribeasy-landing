@@ -11,7 +11,7 @@ export default function AboutPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="py-16 bg-[#F5F5F0]">
+      <section className="py-10 bg-[#F5F5F0]">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             {/* Left Column - Text Content */}
@@ -34,30 +34,17 @@ export default function AboutPage() {
               </button>
             </div>
 
-            {/* Right Column - Images */}
-            <div className="grid grid-cols-2 gap-3 h-full">
-              {/* Left Column - Two stacked images */}
-              <div className="space-y-3">
-                {/* Top Image */}
-                <div className="rounded-2xl overflow-hidden">
-                  <div className="w-full h-40 md:h-48 bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl flex items-center justify-center">
-                    <p className="text-gray-500 text-sm">Image 1</p>
-                  </div>
-                </div>
-                
-                {/* Bottom Image */}
-                <div className="rounded-2xl overflow-hidden">
-                  <div className="w-full h-40 md:h-48 bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl flex items-center justify-center">
-                    <p className="text-gray-500 text-sm">Image 2</p>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Right Column - One large image spanning two rows */}
-              <div className="rounded-2xl overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl flex items-center justify-center min-h-[calc(2*10rem+0.75rem)] md:min-h-[calc(2*12rem+0.75rem)]">
-                  <p className="text-gray-500 text-sm">Image 3</p>
-                </div>
+            {/* Right Column - Image */}
+            <div className="flex justify-center items-center">
+              <div className="relative w-full max-w-md">
+                <Image
+                  src="/images/justina.png"
+                  alt="About CribEasy"
+                  width={400}
+                  height={500}
+                  className="w-full h-auto rounded-2xl object-cover"
+                  quality={100}
+                />
               </div>
             </div>
           </div>
@@ -65,7 +52,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="py-16 bg-white">
+      <section className="py-10 bg-white">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {/* Our Mission */}
@@ -126,7 +113,7 @@ export default function AboutPage() {
       </section>
 
       {/* Section 1: Who We Are & Details */}
-      <section className="py-16 bg-white">
+      <section className="py-10 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
 
