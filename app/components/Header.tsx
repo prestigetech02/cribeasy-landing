@@ -127,20 +127,20 @@ export default function Header() {
               Features
             </Link>
             <Link 
-              href="/#pricing" 
+              href="/pricing" 
               className="px-3 py-2 rounded transition-colors"
               style={{ 
-                backgroundColor: isActiveLink("/#pricing") ? '#00419c' : 'transparent',
-                color: isActiveLink("/#pricing") ? '#ffffff' : '#374151'
+                backgroundColor: isActiveLink("/pricing") ? '#00419c' : 'transparent',
+                color: isActiveLink("/pricing") ? '#ffffff' : '#374151'
               }}
               onMouseEnter={(e) => {
-                if (!isActiveLink("/#pricing")) {
+                if (!isActiveLink("/pricing")) {
                   e.currentTarget.style.backgroundColor = '#00419c';
                   e.currentTarget.style.color = '#ffffff';
                 }
               }}
               onMouseLeave={(e) => {
-                if (!isActiveLink("/#pricing")) {
+                if (!isActiveLink("/pricing")) {
                   e.currentTarget.style.backgroundColor = 'transparent';
                   e.currentTarget.style.color = '#374151';
                 }
@@ -329,20 +329,20 @@ export default function Header() {
                 Features
               </Link>
               <Link
-                href="/#pricing"
+                href="/pricing"
                 className="px-4 py-2 rounded transition-colors"
                 style={{ 
-                  backgroundColor: isActiveLink("/#pricing") ? '#00419c' : 'transparent',
-                  color: isActiveLink("/#pricing") ? '#ffffff' : '#374151'
+                  backgroundColor: isActiveLink("/pricing") ? '#00419c' : 'transparent',
+                  color: isActiveLink("/pricing") ? '#ffffff' : '#374151'
                 }}
                 onMouseEnter={(e) => {
-                  if (!isActiveLink("/#pricing")) {
+                  if (!isActiveLink("/pricing")) {
                     e.currentTarget.style.backgroundColor = '#00419c';
                     e.currentTarget.style.color = '#ffffff';
                   }
                 }}
                 onMouseLeave={(e) => {
-                  if (!isActiveLink("/#pricing")) {
+                  if (!isActiveLink("/pricing")) {
                     e.currentTarget.style.backgroundColor = 'transparent';
                     e.currentTarget.style.color = '#374151';
                   }
