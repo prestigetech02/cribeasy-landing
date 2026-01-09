@@ -7,7 +7,7 @@ export default function FeaturesPage() {
   const features = [
     {
       title: "Area-Based Onboarding",
-      description: "Community-specific user onboarding flow. One user, one community—ensuring all listings, forums, and insights are hyper-local to your neighborhood.",
+      description: "One user, one community—ensuring all listings, agents, service providers and landlords are hyper-local to your neighborhood.",
       details: [
         "Sign-up form requiring name, email, password, and phone number",
         "Mandatory selection of a single community during onboarding",
@@ -184,32 +184,58 @@ export default function FeaturesPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="py-16">
+      <section className="pt-16 pb-8 bg-white">
         <div className="container mx-auto px-6">
-          <div className="w-full rounded-[32px] pb-8 md:pb-12 pt-0 px-8 md:px-12 overflow-hidden" style={{ backgroundColor: '#00419c' }}>
-            <div className="grid md:grid-cols-2 gap-8 items-end">
-              {/* Left Column - Image */}
-              <div className="flex justify-center items-end">
-                <div className="relative w-full max-w-md mx-auto">
-                  <Image
-                    src="/images/features.png"
-                    alt="Platform Features"
-                    width={400}
-                    height={600}
-                    className="w-full h-auto rounded-2xl object-contain"
-                    quality={100}
-                  />
-                </div>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Image */}
+            <div className="flex justify-center items-center">
+              <div className="relative w-full max-w-lg">
+                <Image
+                  src="/images/features.png"
+                  alt="Platform Features"
+                  width={500}
+                  height={750}
+                  className="w-full h-auto rounded-2xl object-contain"
+                  quality={100}
+                />
               </div>
-              
-              {/* Right Column - Text Content */}
-              <div className="text-center md:text-left mx-auto mt-0 pt-0">
-                <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white mt-0 pt-0">
-                  We are not just a platform
-                </h1>
-                <p className="text-xl text-white/90">
-                  Everything you need to find your perfect home and connect with your community, all in one place.
-                </p>
+            </div>
+            
+            {/* Right Column - Text Content */}
+            <div className="text-center md:text-left rounded-[40px] px-8 md:px-10 py-12 md:py-16" style={{ backgroundColor: '#E0F2FE' }}>
+              <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: '#00419c' }}>
+                We are not just a platform
+              </h1>
+              <p className="text-xl text-gray-600 mb-8">
+                Everything you need to find your perfect home and connect with your community, all in one place.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center md:justify-start items-center">
+                <a
+                  href="#"
+                  className="inline-block transition-transform hover:scale-105 rounded-2xl overflow-hidden"
+                  aria-label="Download on App Store"
+                >
+                  <Image
+                    src="/images/gp.svg"
+                    alt="Download on App Store"
+                    width={218}
+                    height={78}
+                    className="h-12 w-auto rounded-2xl"
+                  />
+                </a>
+                <a
+                  href="#"
+                  className="inline-block transition-transform hover:scale-105 rounded-2xl overflow-hidden"
+                  aria-label="Get it on Google Play"
+                >
+                  <Image
+                    src="/images/ap.svg"
+                    alt="Get it on Google Play"
+                    width={218}
+                    height={78}
+                    className="h-12 w-auto rounded-2xl"
+                  />
+                </a>
               </div>
             </div>
           </div>
@@ -256,22 +282,9 @@ export default function FeaturesPage() {
                     <h3 className="text-2xl font-bold text-gray-900 mb-3">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-600 mb-6 leading-relaxed">
+                    <p className="text-gray-600 leading-relaxed">
                       {feature.description}
                     </p>
-                    <div className="border-t border-gray-100 pt-6">
-                      <h4 className="font-semibold text-gray-900 mb-4">Key Features:</h4>
-                      <ul className="space-y-2">
-                        {feature.details.map((detail, idx) => (
-                          <li key={idx} className="flex items-start text-sm text-gray-600">
-                            <svg className={`w-5 h-5 ${colors.text} mr-2 mt-0.5 flex-shrink-0`} fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                            </svg>
-                            <span>{detail}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
                   </div>
                 );
               })}
@@ -327,8 +340,8 @@ export default function FeaturesPage() {
             <div>
               <h3 className="text-2xl font-bold mb-4">CribEasy</h3>
               <p className="text-gray-400">
-                Your trusted community-driven real estate platform. Find verified listings, 
-                connect with neighbors, and discover your perfect neighborhood home.
+                Your trusted community-driven real estate platform. Find verified listings,agents and service providers in your community.
+            
               </p>
             </div>
             <div>

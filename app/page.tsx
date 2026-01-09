@@ -406,7 +406,7 @@ export default function Home() {
             <div className="flex justify-center items-center order-1 md:order-2">
               <div className="relative w-full max-w-md">
                 <Image
-                  src="/images/agent-chat.png"
+                  src="/images/community-image.png"
                   alt="Community Connection"
                   width={400}
                   height={400}
