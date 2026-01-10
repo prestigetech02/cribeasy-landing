@@ -45,7 +45,7 @@ export default function ContactPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="py-16">
+      <section className="py-10">
         <div className="container mx-auto px-6">
           <div className="w-full rounded-[32px] py-16 px-8 md:px-12 text-center" style={{ backgroundColor: '#00419c' }}>
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
@@ -59,7 +59,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16">
+      <section className="py-10">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Contact Information */}

@@ -94,7 +94,7 @@ export default function PricingPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="py-16 bg-white">
+      <section className="py-10 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style={{ color: '#00419c' }}>
@@ -108,7 +108,7 @@ export default function PricingPage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-16 bg-white">
+      <section className="py-10 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
             {/* Tabs */}
@@ -260,7 +260,7 @@ export default function PricingPage() {
       </section>
 
       {/* Package Comparison Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12" style={{ color: '#00419c' }}>
@@ -374,7 +374,7 @@ export default function PricingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16">
+      <section className="py-10">
         <div className="container mx-auto px-6">
           <div className="w-full rounded-2xl p-12 text-center text-white" style={{ backgroundColor: '#00419c' }}>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>

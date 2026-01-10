@@ -184,7 +184,7 @@ export default function FeaturesPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-16 pb-8 bg-white">
+      <section className="pt-10 pb-6 bg-white">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Column - Image */}
@@ -243,7 +243,7 @@ export default function FeaturesPage() {
       </section>
 
       {/* Features Grid */}
-      <section className="py-16">
+      <section className="py-10">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -294,7 +294,7 @@ export default function FeaturesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16">
+      <section className="py-10">
         <div className="container mx-auto px-6">
           <div className="w-full rounded-2xl p-12 text-center text-white" style={{ backgroundColor: '#00419c' }}>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Experience These Features?</h2>

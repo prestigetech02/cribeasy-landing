@@ -21,21 +21,43 @@ export default function AboutPage() {
               </h1>
               <p className="text-base md:text-lg text-gray-700 mb-6 leading-relaxed">
                 CribEasy is a community-driven real estate platform that simplifies house hunting in Nigeria by connecting renters, 
-                verified agents, and residents through neighborhood-specific insights. We don&apos;t just find you a house; 
+                verified agents, and arisans through neighborhood-specific insights. We don&apos;t just find you a house; 
                 we connect you to a community where you can thrive.
               </p>
-              <button 
-                className="px-8 py-4 rounded-full font-medium text-base text-white transition-colors"
-                style={{ backgroundColor: '#00419c' }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#003080'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#00419c'}
-              >
-                Learn More
-              </button>
+              <div className="flex flex-col sm:flex-row gap-4 items-center md:items-start">
+                <a
+                 //testing the push */
+                 //
+                 href="#"
+                  className="inline-block transition-transform hover:scale-105 rounded-2xl overflow-hidden"
+                  aria-label="Download on Google Play"
+                >
+                  <Image
+                    src="/images/gp.svg"
+                    alt="Download on Google Play"
+                    width={218}
+                    height={78}
+                    className="h-12 w-auto rounded-2xl"
+                  />
+                </a>
+                <a
+                  href="#"
+                  className="inline-block transition-transform hover:scale-105 rounded-2xl overflow-hidden"
+                  aria-label="Download on App Store"
+                >
+                  <Image
+                    src="/images/ap.svg"
+                    alt="Download on App Store"
+                    width={218}
+                    height={78}
+                    className="h-12 w-auto rounded-2xl"
+                  />
+                </a>
+              </div>
             </div>
 
             {/* Right Column - Image */}
-            <div className="flex justify-center items-center">
+            <div className="flex flex-col justify-center items-center">
               <div className="relative w-full max-w-md">
                 <Image
                   src="/images/justina.png"
@@ -46,6 +68,9 @@ export default function AboutPage() {
                   quality={100}
                 />
               </div>
+              <p className="mt-4 text-lg font-semibold text-gray-700 text-center">
+                Justina Uwa Ogbeiwi
+              </p>
             </div>
           </div>
         </div>
@@ -199,7 +224,7 @@ export default function AboutPage() {
       </section>
 
       {/* Section 2: Who We Serve & Trust */}
-      <section className="py-16 bg-blue-50/30">
+      <section className="py-10 bg-blue-50/30">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             {/* Who We Serve */}
@@ -275,7 +300,7 @@ export default function AboutPage() {
             </div>
 
             {/* Summary Section */}
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-8 md:p-12 text-white">
+            <div className="rounded-xl p-8 md:p-12 text-white" style={{ backgroundColor: '#00419c' }}>
               <div className="max-w-4xl">
                 <div className="mb-6">
                   <h3 className="text-xl font-semibold mb-4">What We Offer:</h3>

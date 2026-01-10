@@ -158,9 +158,32 @@ export default function Home() {
                   verified listings, neighborhood insights, and trusted community connections.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
-                  <button className="text-white px-8 py-5 rounded-full font-medium transition-colors shadow-lg w-full sm:w-auto text-[20px]" style={{ backgroundColor: '#00419c' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#003080'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#00419c'}>
-                    Get Started
-                  </button>
+                  <a
+                    href="#"
+                    className="inline-block transition-transform hover:scale-105 rounded-2xl overflow-hidden"
+                    aria-label="Download on Google Play"
+                  >
+                    <Image
+                      src="/images/gp.svg"
+                      alt="Download on Google Play"
+                      width={218}
+                      height={78}
+                      className="h-12 w-auto rounded-2xl"
+                    />
+                  </a>
+                  <a
+                    href="#"
+                    className="inline-block transition-transform hover:scale-105 rounded-2xl overflow-hidden"
+                    aria-label="Download on App Store"
+                  >
+                    <Image
+                      src="/images/ap.svg"
+                      alt="Download on App Store"
+                      width={218}
+                      height={78}
+                      className="h-12 w-auto rounded-2xl"
+                    />
+                  </a>
                 </div>
               </div>
             </div>

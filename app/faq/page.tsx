@@ -123,7 +123,7 @@ export default function FAQPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="py-16">
+      <section className="py-10">
         <div className="container mx-auto px-6">
           <div className="w-full rounded-[32px] py-16 px-8 md:px-12 text-center" style={{ backgroundColor: '#00419c' }}>
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
@@ -137,7 +137,7 @@ export default function FAQPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16">
+      <section className="py-10">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             {/* Category Filter */}
