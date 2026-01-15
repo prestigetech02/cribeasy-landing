@@ -768,7 +768,7 @@ export default function Home() {
               <ul className="space-y-2 text-gray-400">
                 <li><a href="/help" className="hover:text-white transition-colors">Help Center</a></li>
                 <li><a href="/contact" className="hover:text-white transition-colors">Contact Support</a></li>
-                <li><a href="mailto:Cribeasy@cribeasysupport.com?subject=Issue Report" className="hover:text-white transition-colors">Report Issue</a></li>
+                <li><a href="mailto:support@cribtechafrik.com?subject=Issue Report" className="hover:text-white transition-colors">Report Issue</a></li>
               </ul>
             </div>
           </div>

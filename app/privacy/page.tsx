@@ -221,7 +221,7 @@ export default function PrivacyPage() {
                 <strong>Email:</strong> privacy@cribeasyapp.com
               </p>
               <p className="text-gray-700 mb-2">
-                <strong>Support Email:</strong> support@cribeasyapp.com
+                <strong>Support Email:</strong> support@cribtechafrik.com
               </p>
               <p className="text-gray-700">
                 <strong>Address:</strong> [Company Address]

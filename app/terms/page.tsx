@@ -266,7 +266,7 @@ export default function TermsPage() {
             </p>
             <div className="bg-gray-50 p-6 rounded-lg mb-8">
               <p className="text-gray-700 mb-2">
-                <strong>Email:</strong> support@cribeasyapp.com
+                <strong>Email:</strong> support@cribtechafrik.com
               </p>
               <p className="text-gray-700 mb-2">
                 <strong>Legal Email:</strong> legal@cribeasyapp.com

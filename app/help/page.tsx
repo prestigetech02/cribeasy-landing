@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Header from "../components/Header";
 import { FaChevronDown, FaChevronUp, FaEnvelope, FaPhone, FaMapMarkerAlt, FaClock } from "react-icons/fa";
 import Link from "next/link";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 interface FAQItem {
   question: string;
@@ -33,7 +34,7 @@ const commonFAQs: FAQItem[] = [
   },
   {
     question: "What should I do if I encounter a technical issue?",
-    answer: "If you experience any technical issues, please contact our support team through the contact form below or email us at Cribeasy@cribeasysupport.com. We're here to help and will respond as soon as possible."
+    answer: "If you experience any technical issues, please contact our support team through the contact form below or email us at support@cribtechafrik.com. We're here to help and will respond as soon as possible."
   }
 ];
 
@@ -47,6 +48,8 @@ export default function HelpCenterPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const captchaRef = useRef<HCaptcha>(null);
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -59,8 +62,20 @@ export default function HelpCenterPage() {
     });
   };
 
+  const handleCaptchaVerify = (token: string) => {
+    setCaptchaToken(token);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate captcha
+    if (!captchaToken) {
+      setSubmitStatus("error");
+      alert("Please complete the captcha verification");
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus(null);
 
@@ -78,7 +93,8 @@ export default function HelpCenterPage() {
           from_name: formData.name,
           from_email: formData.email,
           message: `Name: ${formData.name}\nEmail: ${formData.email}\nSubject: ${formData.subject}\n\nMessage:\n${formData.message}`,
-          to: "Cribeasy@cribeasysupport.com",
+          to: "support@cribtechafrik.com",
+          "h-captcha-response": captchaToken,
         }),
       });
 
@@ -87,6 +103,8 @@ export default function HelpCenterPage() {
       if (response.ok && data.success) {
         setSubmitStatus("success");
         setFormData({ name: "", email: "", subject: "", message: "" });
+        setCaptchaToken(null);
+        captchaRef.current?.resetCaptcha();
         
         // Reset success message after 5 seconds
         setTimeout(() => {
@@ -94,10 +112,14 @@ export default function HelpCenterPage() {
         }, 5000);
       } else {
         setSubmitStatus("error");
+        captchaRef.current?.resetCaptcha();
+        setCaptchaToken(null);
       }
     } catch (error) {
       console.error("Form submission error:", error);
       setSubmitStatus("error");
+      captchaRef.current?.resetCaptcha();
+      setCaptchaToken(null);
     } finally {
       setIsSubmitting(false);
     }
@@ -197,8 +219,8 @@ export default function HelpCenterPage() {
                   </div>
                   <div className="ml-4">
                     <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                    <a href="mailto:Cribeasy@cribeasysupport.com" className="text-gray-600 hover:text-blue-600 transition-colors">
-                      Cribeasy@cribeasysupport.com
+                    <a href="mailto:support@cribtechafrik.com" className="text-gray-600 hover:text-blue-600 transition-colors">
+                      support@cribtechafrik.com
                     </a>
                   </div>
                 </div>
@@ -338,13 +360,22 @@ export default function HelpCenterPage() {
                     />
                   </div>
 
+                  <div>
+                    <HCaptcha
+                      sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
+                      onVerify={handleCaptchaVerify}
+                      ref={captchaRef}
+                      reCaptchaCompat={false}
+                    />
+                  </div>
+
                   <button
                     type="submit"
-                    disabled={isSubmitting}
+                    disabled={isSubmitting || !captchaToken}
                     className="w-full text-white px-6 py-4 rounded-full font-medium text-base transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     style={{ backgroundColor: '#00419c' }}
                     onMouseEnter={(e) => {
-                      if (!isSubmitting) {
+                      if (!isSubmitting && captchaToken) {
                         e.currentTarget.style.backgroundColor = '#003080';
                       }
                     }}

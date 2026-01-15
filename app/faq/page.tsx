@@ -99,7 +99,7 @@ const faqData: FAQItem[] = [
   {
     category: "Technical",
     question: "What should I do if I encounter a technical issue?",
-    answer: "If you experience any technical issues, please contact our support team through the contact page or email us at Cribeasy@cribeasysupport.com. We're here to help and will respond as soon as possible."
+    answer: "If you experience any technical issues, please contact our support team through the contact page or email us at support@cribtechafrik.com. We're here to help and will respond as soon as possible."
   }
 ];
 
