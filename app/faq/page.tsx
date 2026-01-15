@@ -238,9 +238,10 @@ export default function FAQPage() {
             <div>
               <h4 className="font-semibold mb-4">Platform</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="/#about" className="hover:text-white transition-colors">About Us</a></li>
-                <li><a href="/#features" className="hover:text-white transition-colors">Features</a></li>
-                <li><a href="/#how-it-works" className="hover:text-white transition-colors">How It Works</a></li>
+                <li><a href="/features" className="hover:text-white transition-colors">Features</a></li>
+                <li><a href="/pricing" className="hover:text-white transition-colors">Pricing</a></li>
+                <li><a href="/about" className="hover:text-white transition-colors">About Us</a></li>
+                <li><a href="/faq" className="hover:text-white transition-colors">FAQ</a></li>
               </ul>
             </div>
             <div>

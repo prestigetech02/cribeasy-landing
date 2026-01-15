@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   authors: [{ name: "CribEasy" }],
   creator: "CribEasy",
   publisher: "CribEasy",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://cribeasy.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://cribeasyapp.com"),
   alternates: {
     canonical: "/",
   },

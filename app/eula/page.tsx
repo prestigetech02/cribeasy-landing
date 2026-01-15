@@ -281,9 +281,10 @@ export default function EULAPage() {
             <div>
               <h4 className="font-semibold mb-4">Platform</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><Link href="/#about" className="hover:text-white transition-colors">About Us</Link></li>
-                <li><Link href="/#features" className="hover:text-white transition-colors">Features</Link></li>
-                <li><Link href="/#how-it-works" className="hover:text-white transition-colors">How It Works</Link></li>
+                <li><Link href="/features" className="hover:text-white transition-colors">Features</Link></li>
+                <li><Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link></li>
+                <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
+                <li><Link href="/faq" className="hover:text-white transition-colors">FAQ</Link></li>
               </ul>
             </div>
             <div>
@@ -309,8 +310,8 @@ export default function EULAPage() {
             <div>
               <h4 className="font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><Link href="/#contact" className="hover:text-white transition-colors">Contact Support</Link></li>
-                <li><Link href="/#contact" className="hover:text-white transition-colors">Help Center</Link></li>
+                <li><Link href="/contact" className="hover:text-white transition-colors">Contact Support</Link></li>
+                <li><Link href="/help" className="hover:text-white transition-colors">Help Center</Link></li>
               </ul>
             </div>
           </div>

@@ -26,7 +26,6 @@ export default function AboutPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 items-center md:items-start">
                 <a
-                 //testing the push */
                  //
                  href="#"
                   className="inline-block transition-transform hover:scale-105 rounded-2xl overflow-hidden"
@@ -348,9 +347,10 @@ export default function AboutPage() {
             <div>
               <h4 className="font-semibold mb-4">Platform</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="/#about" className="hover:text-white transition-colors">About Us</a></li>
-                <li><a href="/#features" className="hover:text-white transition-colors">Features</a></li>
-                <li><a href="/#how-it-works" className="hover:text-white transition-colors">How It Works</a></li>
+                <li><a href="/features" className="hover:text-white transition-colors">Features</a></li>
+                <li><a href="/pricing" className="hover:text-white transition-colors">Pricing</a></li>
+                <li><a href="/about" className="hover:text-white transition-colors">About Us</a></li>
+                <li><a href="/faq" className="hover:text-white transition-colors">FAQ</a></li>
               </ul>
             </div>
             <div>
@@ -365,7 +365,7 @@ export default function AboutPage() {
               <h4 className="font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="/contact" className="hover:text-white transition-colors">Contact Support</a></li>
-                <li><a href="/contact" className="hover:text-white transition-colors">Help Center</a></li>
+                <li><a href="/help" className="hover:text-white transition-colors">Help Center</a></li>
               </ul>
             </div>
           </div>

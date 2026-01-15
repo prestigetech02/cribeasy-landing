@@ -749,10 +749,10 @@ export default function Home() {
             <div>
               <h4 className="font-semibold mb-4">Platform</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
-                <li><a href="#features" className="hover:text-white transition-colors">Neighborhood Pages</a></li>
-                <li><a href="#features" className="hover:text-white transition-colors">Community Forums</a></li>
-                <li><a href="#features" className="hover:text-white transition-colors">Local Directory</a></li>
+                <li><a href="/features" className="hover:text-white transition-colors">Features</a></li>
+                <li><a href="/pricing" className="hover:text-white transition-colors">Pricing</a></li>
+                <li><a href="/about" className="hover:text-white transition-colors">About Us</a></li>
+                <li><a href="/faq" className="hover:text-white transition-colors">FAQ</a></li>
               </ul>
             </div>
             <div>
@@ -766,9 +766,9 @@ export default function Home() {
             <div>
               <h4 className="font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
-                <li><a href="#contact" className="hover:text-white transition-colors">Contact Support</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Report Issue</a></li>
+                <li><a href="/help" className="hover:text-white transition-colors">Help Center</a></li>
+                <li><a href="/contact" className="hover:text-white transition-colors">Contact Support</a></li>
+                <li><a href="mailto:Cribeasy@cribeasysupport.com?subject=Issue Report" className="hover:text-white transition-colors">Report Issue</a></li>
               </ul>
             </div>
           </div>
