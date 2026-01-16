@@ -415,6 +415,7 @@ export default function ContactPage() {
               <ul className="space-y-2 text-gray-400">
                 <li><a href="/contact" className="hover:text-white transition-colors">Contact Support</a></li>
                 <li><a href="/help" className="hover:text-white transition-colors">Help Center</a></li>
+                <li><a href="/account-deletion" className="hover:text-white transition-colors">Account Deletion</a></li>
               </ul>
             </div>
           </div>

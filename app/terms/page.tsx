@@ -330,6 +330,7 @@ export default function TermsPage() {
               <ul className="space-y-2 text-gray-400">
                 <li><Link href="/contact" className="hover:text-white transition-colors">Contact Support</Link></li>
                 <li><Link href="/help" className="hover:text-white transition-colors">Help Center</Link></li>
+                <li><Link href="/account-deletion" className="hover:text-white transition-colors">Account Deletion</Link></li>
               </ul>
             </div>
           </div>
